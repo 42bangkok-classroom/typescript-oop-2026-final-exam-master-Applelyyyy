@@ -1,6 +1,6 @@
 
 
-export interface Products {
+export interface Products<T> {
     id: number
     customerName: string
     purchaseDate: string
