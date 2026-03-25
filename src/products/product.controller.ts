@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { ProductsService } from './products.service';
+import { ProductsService } from './product.service';
 import * as responseInterface from 'src/interfaces/response.interface';
 @Controller('products')
 export class ProductsController {
