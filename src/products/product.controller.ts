@@ -5,10 +5,7 @@ import type { ApiResponse } from 'src/interfaces/response.interface';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
   @Get()
-  findAll(): ApiResponse<{
-    service: string;
-    version: string;
-  }> {
+  findAll(): ApiResponse<{}> {
     return {
       success: true,
       data: this.productsService.findAll(),
