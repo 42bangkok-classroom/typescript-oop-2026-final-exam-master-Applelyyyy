@@ -1,4 +1,4 @@
-import { Controller, Get, HttpCode} from '@nestjs/common';
+import { Controller, Get, HttpCode } from '@nestjs/common';
 import { AppService } from './app.service';
 import * as responseInterface from './interfaces/response.interface';
 
@@ -7,12 +7,14 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): responseInterface.ApiResponse<{ service: string; version: string
-  }>{
+  getHello(): responseInterface.ApiResponse<{
+    service: string;
+    version: string;
+  }> {
     return {
       success: true,
       data: this.appService.getHello(),
-      message:'Hello NestJS'
+      message: 'Hello NestJS',
     };
   }
 }
