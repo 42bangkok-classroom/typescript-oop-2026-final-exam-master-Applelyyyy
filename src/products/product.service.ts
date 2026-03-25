@@ -11,7 +11,7 @@ export class ProductsService {
     const data = fs.readFileSync(this.filePath, 'utf-8');
     return data ? JSON.parse(data) : [];
   }
-  findAll() {
+  findAll() :Products[] {
     return this.readFile();
   }
 }
