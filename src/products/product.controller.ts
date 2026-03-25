@@ -5,17 +5,7 @@ import type { ApiResponse } from 'src/interfaces/response.interface';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
   @Get()
-  findAll(): ApiResponse<{
-    id: number;
-    customerName: string;
-    purchaseDate: string;
-    items: {
-      productId: number;
-      quantity: number;
-      price: number;
-    };
-    totalPrice: number;
-  }> {
+  findAll() {
     return {
       success: true,
       data: this.productsService.findAll(),
