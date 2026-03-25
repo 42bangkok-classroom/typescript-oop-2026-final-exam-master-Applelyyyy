@@ -7,12 +7,9 @@ import { ApiResponse } from 'src/interfaces/response.interface';
 export class ProductsService {
   private filePath = path.join(__dirname, '../../data/products.json');
 
-  private readFile() {
-    if (!fs.existsSync(this.filePath)) return [];
+    findAll() : ApiResponse<Products[]> {
     const data = fs.readFileSync(this.filePath, 'utf-8');
-    return data ? JSON.parse(data) : [];
-  }
-  findAll(): ApiResponse<Products[]> {
-    return this.readFile();
+    const data_final = JSON.parse(data);
+    return data_final;
   }
 }
